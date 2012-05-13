@@ -4,7 +4,9 @@
   "description": "Bootstrap Helpers for Zeke",
   "version": "0.1.0",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "zeke": "*"
+  },
   "optionalDependencies": {},
   "engines": {
     "node": "*"

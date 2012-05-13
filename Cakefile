@@ -149,4 +149,4 @@ task 'watch', 'compile and watch', -> build true, -> log ":-)", green
 # ```
 # cake test
 # ```
-task 'test', 'run tests', -> build -> mocha -> log ":)", green
+task 'test', 'run tests', -> build -> launch 'coffee', ['test'], -> log ":)", green
