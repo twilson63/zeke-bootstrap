@@ -1,0 +1,12 @@
+{
+  "author": "Tom Wilson <tom@jackhq.com>",
+  "name": "zeke-bootstrap",
+  "description": "Bootstrap Helpers for Zeke",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
