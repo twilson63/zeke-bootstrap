@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Zeke-bootstrap by twilson63</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Zeke-bootstrap</h1>
+        <p class="header">A zeke plugin to provide bootstrap html template helpers </p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/twilson63/zeke-bootstrap/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/twilson63/zeke-bootstrap/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/twilson63/zeke-bootstrap">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/twilson63">twilson63</a></p>
+
+
+      </header>
+      <section>
+        <h1>Zeke-Bootstrap</h1>
+
+<p>A zeke plugin for twitter bootstrap helpers:  </p>
+
+<h1>How to Install</h1>
+
+<div class="highlight"><pre>npm install zeke --save
+npm install zeke-bootstrap --save
+</pre></div>
+
+<h1>Usage</h1>
+
+<p>In you application require zeke and zeke-bootstrap, then use the use method to add the zeke-bootstrap plugin to your zeke coffeekup compiler.</p>
+
+<div class="highlight"><pre><span class="nv">zeke = </span><span class="nx">require</span><span class="p">(</span><span class="s">'zeke'</span><span class="p">)</span>
+<span class="nv">zb = </span><span class="nx">require</span><span class="p">(</span><span class="s">'zeke-bootstrap'</span><span class="p">)</span>
+
+<span class="nx">zeke</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">zb</span><span class="p">)</span> <span class="c1"># this inserts the bootstrap plugin into the zeke compiler</span>
+
+</pre></div>
+
+<p>Example of twitter nav bar:</p>
+
+<div class="highlight"><pre><span class="nx">zeke</span><span class="p">.</span><span class="nx">render</span> <span class="o">-&gt;</span>
+  <span class="nx">topbar</span> <span class="o">-&gt;</span>
+    <span class="nx">navbar_inner</span> <span class="o">-&gt;</span>
+      <span class="nx">container</span> <span class="o">-&gt;</span>
+        <span class="nx">collaspeBtn</span><span class="p">()</span>
+        <span class="nx">brandLink</span> <span class="s">'#index'</span><span class="p">,</span> <span class="s">'CodeRetreatChs'</span>
+        <span class="nx">div</span> <span class="s">'.nav-collaspe'</span><span class="p">,</span> <span class="o">-&gt;</span>
+          <span class="nx">ul</span> <span class="s">'#nav.nav'</span><span class="p">,</span> <span class="o">-&gt;</span>
+            <span class="nx">pageLink</span> <span class="s">'#index'</span><span class="p">,</span> <span class="s">'Home'</span>
+            <span class="nx">pageLink</span> <span class="s">'#about'</span><span class="p">,</span> <span class="s">'About'</span>
+            <span class="nx">pageLink</span> <span class="s">'#sponsors'</span><span class="p">,</span> <span class="s">'Sponsors'</span>
+            <span class="nx">pageLink</span> <span class="s">'#schedule'</span><span class="p">,</span> <span class="s">'Schedule'</span>
+            <span class="nx">pageLink</span> <span class="s">'#faq'</span><span class="p">,</span> <span class="s">'FAQ'</span>
+            <span class="nx">li</span> <span class="s">'.divider-vertical'</span><span class="p">,</span> <span class="s">''</span>
+            <span class="nx">dropdownMenu</span> <span class="s">'#contact'</span><span class="p">,</span> <span class="s">'Contact'</span><span class="p">,</span> <span class="p">[</span>
+              <span class="p">{</span> <span class="nv">href: </span><span class="s">'http://twitter.com/coderetreatchs'</span><span class="p">,</span> <span class="nv">label: </span><span class="s">'@coderetreatchs'</span> <span class="p">}</span>
+              <span class="p">{</span> <span class="nv">href: </span><span class="s">'mailto://coderetreat@jackhq.com'</span><span class="p">,</span> <span class="nv">label: </span><span class="s">'coderetreat@foo.com'</span> <span class="p">}</span>
+              <span class="p">{</span> <span class="nv">href: </span><span class="s">'tel:843.606.0637'</span><span class="p">,</span> <span class="nv">label: </span><span class="s">'555.555.5555'</span> <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="nx">a</span> <span class="s">'#btn-sign-up.btn.pull-right'</span><span class="p">,</span> <span class="nv">href: </span><span class="s">'http://coderetreatchs.eventbrite.com/'</span><span class="p">,</span> <span class="s">'Register'</span>
+
+</pre></div>
+
+<h1>More Info</h1>
+
+<p><a href="http://twilson63.github.com/zeke/">See Zeke</a></p>
+
+<h2>Tests</h2>
+
+<div class="highlight"><pre>npm <span class="nb">test</span>
+</pre></div>
+
+<h2>License</h2>
+
+<p>MIT/X11.</p>
+
+<h2>contribute</h2>
+
+<p>everyone is welcome to contribute with patches, bugfixes and new features</p>
+
+<ol>
+<li>create an <a href="https://github.com/twilson63/zeke-bootstrap/issues">issue</a> on github so the community can comment on your idea</li>
+<li>fork <code>zeke</code> in github</li>
+<li>create a new branch <code>git checkout -b my_branch</code>
+</li>
+<li>create tests for the changes you made</li>
+<li>make sure you pass both existing and newly inserted tests</li>
+<li>commit your changes</li>
+<li>push to your branch <code>git push origin my_branch</code>
+</li>
+<li>create a pull request</li>
+</ol><h2>Thanks</h2>
+
+<ul>
+<li>
+<a href="http://github.com/flatiron/broadway">Nodejitsu</a> - For Broadway!</li>
+<li>
+<a href="https://github.com/gradus">Kris Windham</a> - For keeping CoffeeKup alive</li>
+<li>
+<a href="https://github.com/mauricemach">Maurice Machado</a> - For creating CoffeeKup</li>
+<li>
+<a href="https://github.com/mark-hahn">Mark Hahn</a> - For putting together solid beginners documentation</li>
+<li>Open Source Community</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
