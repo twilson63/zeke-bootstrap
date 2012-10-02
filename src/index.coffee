@@ -11,4 +11,7 @@ exports.attach = ->
   #@helpers['nav_collaspe'] -> (t) -> div '.nav-collapse', t
   @helpers['brandLink'] = require './brand_link'
   @helpers['pageLink'] = require './page_link'
-  @helpers['dropdownMenu'] = require './dropdown_menu'
+  @helpers['dropdownMenu'] = require './dropdown_menu'  
+  @helpers['jquery'] = require './jquery'
+  @helpers['bootstrapCSS'] = require './bootstrapcss'
+  @helpers['bootstrapJS'] = require './bootstrapjs'  
