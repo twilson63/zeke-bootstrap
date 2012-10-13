@@ -44,5 +44,6 @@ exports.attach = function() {
   this.helpers['dropdownMenu'] = require('./dropdown_menu');
   this.helpers['jquery'] = require('./jquery');
   this.helpers['bootstrapCSS'] = require('./bootstrapcss');
-  return this.helpers['bootstrapJS'] = require('./bootstrapjs');
+  this.helpers['bootstrapJS'] = require('./bootstrapjs');
+  return this.helpers['bsTable'] = require('./table');
 };

@@ -28,3 +28,4 @@ exports.attach = ->
   @helpers['jquery'] = require './jquery'
   @helpers['bootstrapCSS'] = require './bootstrapcss'
   @helpers['bootstrapJS'] = require './bootstrapjs'  
+  @helpers['bsTable'] = require './table'  
