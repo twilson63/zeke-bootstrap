@@ -1,7 +1,8 @@
 
 module.exports = function(href, t) {
   return li(function() {
-    return a('.page-link', {
+    return a({
+      'data-toggle': 'modal',
       href: href
     }, t);
   });
