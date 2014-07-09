@@ -1,12 +1,29 @@
+strcmp = (str1, str2) ->
+  l1 = str1.length
+  l2 = str2.length
+  mismatch=-1
+  for i in [1..l1] by 1
+    if mismatch==-1 && (str1.charAt i-1) != (str2.charAt i-1)
+      mismatch = i
+  mismatch
+
 assert = require 'assert'
 z = require 'zeke'
 z.use require '../'
 z.init() unless z.initialized
 
-foo = z.render ->
+htmlf = (html) -> html.replace /(\n\s+|\n+)/g, ''
+
+result = z.render ->
   topbar ->
     navbar_inner ->
       container ->
         h1 'Foo'
 
-assert.equal foo, '<div id="navbar" class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container"><h1>Foo</h1></div></div></div>'
+output = '<div id="navbar" class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container"><h1>Foo</h1></div></div></div>'
+
+
+mismatchloc = strcmp result, htmlf(output)
+if mismatchloc != -1
+  console.log "mismatch location", mismatchloc-1, "  ", result.substr( mismatchloc-1, 20), "!=", htmlf(output).substr( mismatchloc-1, 20)
+assert.equal result, htmlf(output)

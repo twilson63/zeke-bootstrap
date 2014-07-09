@@ -11,13 +11,19 @@ module.exports = (tableData) ->
   caption tableData.caption if tableData.caption
   thead ->
     tr ->
-      for col in tableData.head
-        th col
+      for col in tableData.columns
+        th -> if col.format? text(col.format(col.head)) else col.head
   tbody ->
     for row in tableData.rows
       rowclass = "tr"
       rowclass += " class=\"#{row.highlight}\"" if row.highlight
       text "<#{rowclass}>"
-      td item for item in row.data
+      for item,i in row.data
+        tabledataitem=item
+        if tableData.columns[i].format? 
+          tabledataitem=tableData.columns[i].format(tabledataitem)
+        if row.format? 
+          tabledataitem=row.format(tabledataitem)
+        td tabledataitem
       text "</tr>"
   text '</table>'

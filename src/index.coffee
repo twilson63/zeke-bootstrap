@@ -20,7 +20,7 @@ exports.attach = ->
   @helpers['accordionEntry'] = require './accordion_entry'
   @helpers['row_fluid'] = (t) -> div '.row-fluid', t
   @helpers['page_header'] = (t) -> div '.page-header', t
-  @helpers['collapseBtn'] = require './collaspe_btn'
+  @helpers['collapseBtn'] = require './collapse_btn'
   #@helpers['nav_collaspe'] -> (t) -> div '.nav-collapse', t
   @helpers['brandLink'] = require './brand_link'
   @helpers['pageLink'] = require './page_link'
@@ -29,3 +29,5 @@ exports.attach = ->
   @helpers['bootstrapCSS'] = require './bootstrapcss'
   @helpers['bootstrapJS'] = require './bootstrapjs'  
   @helpers['bsTable'] = require './table'  
+  @helpers['bsNavbar'] = require './bsNavbar'  
+  @helpers['center'] = (t) -> div 'align':'center',t
