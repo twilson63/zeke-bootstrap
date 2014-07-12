@@ -5,5 +5,5 @@
 #    <span class="icon-bar"></span>
 # </a>
 module.exports = ->
-  a '.btn.btn-navbar', 'data-toggle': 'collaspe', 'data-target': '.nav-collaspe', ->
+  a '.btn.btn-navbar', 'data-toggle': 'collapse', 'data-target': '.nav-collapse', ->
     span '.icon-bar', '' for times in [0..2]

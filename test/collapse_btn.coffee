@@ -12,11 +12,15 @@ z = require 'zeke'
 z.use require '../'
 z.init() unless z.initialized
 
-result = z.render -> modalLink '#index', 'Home'
+result = z.render -> collapseBtn()
 
 htmlf = (html) -> html.replace /(\n\s+|\n+)/g, ''
 output = '''
-<li><a data-toggle="modal" href="#index">Home</a></li>
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</a>
 '''
 mismatchloc = strcmp result, htmlf(output)
 if mismatchloc != -1
